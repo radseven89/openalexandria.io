@@ -8,644 +8,644 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --sand: #f5f0e8;
-    --sand-dark: #e8e0d0;
-    --ink: #1a1714;
-    --ink-mid: #3d3830;
-    --ink-light: #7a7266;
-    --gold: #b8963e;
-    --gold-light: #d4b06a;
-    --stone: #8c8278;
-    --parchment: #faf7f2;
-  }
+ :root {
+  --sand: #f5f0e8;
+  --sand-dark: #e8e0d0;
+  --ink: #1a1714;
+  --ink-mid: #3d3830;
+  --ink-light: #7a7266;
+  --gold: #b8963e;
+  --gold-light: #d4b06a;
+  --stone: #8c8278;
+  --parchment: #faf7f2;
+ }
 
-  html { scroll-behavior: smooth; }
+ html { scroll-behavior: smooth; }
 
-  body {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    background: var(--parchment);
-    color: var(--ink);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+ body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--parchment);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+ }
 
-  /* grain overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
-  }
+ /* grain overlay */
+ body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+ }
 
-  /* nav */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 1.5rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    background: rgba(250, 247, 242, 0.85);
-    backdrop-filter: blur(8px);
-    border-bottom: 0.5px solid rgba(26,23,20,0.08);
-  }
+ /* nav */
+ nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid rgba(26,23,20,0.08);
+ }
 
-  .nav-logo {
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    color: var(--ink);
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+ .nav-logo {
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+ }
 
-  .nav-logo span {
-    color: var(--gold);
-  }
+ .nav-logo span {
+  color: var(--gold);
+ }
 
-  nav a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: var(--ink-light);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
+ nav a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+ }
 
-  nav a:hover { color: var(--ink); }
+ nav a:hover { color: var(--ink); }
 
-  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+ .nav-links { display: flex; gap: 2.5rem; align-items: center; }
 
-  /* hero */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8rem 3rem 5rem;
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+ /* hero */
+ .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 3rem 5rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+ }
 
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.2s;
-  }
+ .hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.2s;
+ }
 
-  .hero-title {
-    font-size: clamp(4rem, 10vw, 9rem);
-    font-weight: 300;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.4s;
-  }
+ .hero-title {
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.4s;
+ }
 
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
+ .hero-title em {
+  font-style: italic;
+  color: var(--gold);
+ }
 
-  .hero-sub {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-weight: 300;
-    line-height: 1.7;
-    color: var(--ink-mid);
-    max-width: 560px;
-    margin-bottom: 3.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.6s;
-  }
+ .hero-sub {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  max-width: 560px;
+  margin-bottom: 3.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.6s;
+ }
 
-  .hero-actions {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.8s;
-    flex-wrap: wrap;
-  }
+ .hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.8s;
+  flex-wrap: wrap;
+ }
 
-  .btn-primary {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--parchment);
-    background: var(--ink);
-    border: none;
-    padding: 1rem 2.5rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s;
-    display: inline-block;
-  }
+ .btn-primary {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--parchment);
+  background: var(--ink);
+  border: none;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+ }
 
-  .btn-primary:hover { background: var(--ink-mid); }
+ .btn-primary:hover { background: var(--ink-mid); }
 
-  .btn-ghost {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    text-decoration: none;
-    border-bottom: 0.5px solid var(--stone);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-  }
+ .btn-ghost {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--stone);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+ }
 
-  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+ .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
 
-  /* decorative line */
-  .hero-line {
-    position: absolute;
-    right: 3rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0.5px;
-    height: 40vh;
-    background: linear-gradient(to bottom, transparent, var(--sand-dark), transparent);
-    opacity: 0;
-    animation: fadeIn 1.2s ease forwards 1s;
-  }
+ /* decorative line */
+ .hero-line {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.5px;
+  height: 40vh;
+  background: linear-gradient(to bottom, transparent, var(--sand-dark), transparent);
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards 1s;
+ }
 
-  /* scroll indicator */
-  .scroll-hint {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--stone);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards 1.2s;
-  }
+ /* scroll indicator */
+ .scroll-hint {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 1.2s;
+ }
 
-  .scroll-hint::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 0.5px;
-    background: var(--stone);
-  }
+ .scroll-hint::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 0.5px;
+  background: var(--stone);
+ }
 
-  /* section */
-  section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 7rem 3rem;
-  }
+ /* section */
+ section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7rem 3rem;
+ }
 
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+ .section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+ }
 
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 0.5px;
-    background: var(--sand-dark);
-    max-width: 80px;
-  }
+ .section-label::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: var(--sand-dark);
+  max-width: 80px;
+ }
 
-  /* what it is */
-  .what-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
+ /* what it is */
+ .what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+ }
 
-  .what-body {
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--ink-mid);
-  }
+ .what-body {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-mid);
+ }
 
-  .what-body p + p { margin-top: 1.5rem; }
+ .what-body p + p { margin-top: 1.5rem; }
 
-  .what-pull {
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    font-weight: 300;
-    line-height: 1.3;
-    font-style: italic;
-    color: var(--ink);
-    border-left: 2px solid var(--gold);
-    padding-left: 2rem;
-  }
+ .what-pull {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.3;
+  font-style: italic;
+  color: var(--ink);
+  border-left: 2px solid var(--gold);
+  padding-left: 2rem;
+ }
 
-  /* domains */
-  .domains-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0;
-    border-top: 0.5px solid var(--sand-dark);
-    border-left: 0.5px solid var(--sand-dark);
-    margin-top: 3rem;
-  }
+ /* domains */
+ .domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+  border-top: 0.5px solid var(--sand-dark);
+  border-left: 0.5px solid var(--sand-dark);
+  margin-top: 3rem;
+ }
 
-  .domain-card {
-    padding: 2.5rem;
-    border-right: 0.5px solid var(--sand-dark);
-    border-bottom: 0.5px solid var(--sand-dark);
-    transition: background 0.2s;
-  }
+ .domain-card {
+  padding: 2.5rem;
+  border-right: 0.5px solid var(--sand-dark);
+  border-bottom: 0.5px solid var(--sand-dark);
+  transition: background 0.2s;
+ }
 
-  .domain-card:hover { background: var(--sand); }
+ .domain-card:hover { background: var(--sand); }
 
-  .domain-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
+ .domain-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+ }
 
-  .domain-name {
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin-bottom: 0.75rem;
-    color: var(--ink);
-  }
+ .domain-name {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+ }
 
-  .domain-desc {
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.7;
-    color: var(--ink-light);
-  }
+ .domain-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-light);
+ }
 
-  .domain-founding {
-    display: inline-block;
-    margin-top: 1.25rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--parchment);
-    background: var(--gold);
-    padding: 0.3rem 0.75rem;
-  }
+ .domain-founding {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--parchment);
+  background: var(--gold);
+  padding: 0.3rem 0.75rem;
+ }
 
-  /* the mission */
-  .mission-block {
-    max-width: 760px;
-  }
+ /* the mission */
+ .mission-block {
+  max-width: 760px;
+ }
 
-  .mission-block h2 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 2.5rem;
-  }
+ .mission-block h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+ }
 
-  .mission-block p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--ink-mid);
-    margin-bottom: 1.5rem;
-  }
+ .mission-block p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--ink-mid);
+  margin-bottom: 1.5rem;
+ }
 
-  /* founding */
-  .founding-bar {
-    background: var(--sand);
-    border-top: 0.5px solid var(--sand-dark);
-    border-bottom: 0.5px solid var(--sand-dark);
-  }
+ /* founding */
+ .founding-bar {
+  background: var(--sand);
+  border-top: 0.5px solid var(--sand-dark);
+  border-bottom: 0.5px solid var(--sand-dark);
+ }
 
-  .founding-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 3rem;
-    display: flex;
-    gap: 5rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+ .founding-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  flex-wrap: wrap;
+ }
 
-  .founding-stat {
-    text-align: center;
-  }
+ .founding-stat {
+  text-align: center;
+ }
 
-  .founding-num {
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
+ .founding-num {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+ }
 
-  .founding-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--stone);
-  }
+ .founding-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone);
+ }
 
-  .founding-divider {
-    width: 0.5px;
-    height: 60px;
-    background: var(--sand-dark);
-  }
+ .founding-divider {
+  width: 0.5px;
+  height: 60px;
+  background: var(--sand-dark);
+ }
 
-  .founding-text {
-    flex: 1;
-    min-width: 280px;
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--ink-mid);
-    font-style: italic;
-  }
+ .founding-text {
+  flex: 1;
+  min-width: 280px;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-mid);
+  font-style: italic;
+ }
 
-  /* signup */
-  .signup-section {
-    text-align: center;
-    padding: 8rem 3rem;
-  }
+ /* signup */
+ .signup-section {
+  text-align: center;
+  padding: 8rem 3rem;
+ }
 
-  .signup-section h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-  }
+ .signup-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+ }
 
-  .signup-section p {
-    font-size: 1.15rem;
-    font-weight: 300;
-    color: var(--ink-mid);
-    margin-bottom: 3rem;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-  }
+ .signup-section p {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--ink-mid);
+  margin-bottom: 3rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+ }
 
-  .signup-form {
-    display: flex;
-    gap: 0;
-    max-width: 480px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
+ .signup-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+ }
 
-  .signup-form input {
-    flex: 1;
-    min-width: 220px;
-    padding: 1rem 1.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    border: 0.5px solid var(--sand-dark);
-    background: var(--parchment);
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.2s;
-  }
+ .signup-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 1rem 1.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  border: 0.5px solid var(--sand-dark);
+  background: var(--parchment);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+ }
 
-  .signup-form input:focus { border-color: var(--ink); }
-  .signup-form input::placeholder { color: var(--stone); }
+ .signup-form input:focus { border-color: var(--ink); }
+ .signup-form input::placeholder { color: var(--stone); }
 
-  /* footer */
-  footer {
-    border-top: 0.5px solid var(--sand-dark);
-    padding: 2.5rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+ /* footer */
+ footer {
+  border-top: 0.5px solid var(--sand-dark);
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+ }
 
-  .footer-logo {
-    font-size: 0.9rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
+ .footer-logo {
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+ }
 
-  .footer-logo span { color: var(--gold); }
+ .footer-logo span { color: var(--gold); }
 
-  .footer-meta {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    color: var(--stone);
-    text-transform: uppercase;
-  }
+ .footer-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--stone);
+  text-transform: uppercase;
+ }
 
-  /* divider */
-  hr {
-    border: none;
-    border-top: 0.5px solid var(--sand-dark);
-    margin: 0;
-  }
+ /* divider */
+ hr {
+  border: none;
+  border-top: 0.5px solid var(--sand-dark);
+  margin: 0;
+ }
 
-  /* animations */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+ /* animations */
+ @keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+ }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+ @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+ }
 
-  /* responsive */
-  @media (max-width: 768px) {
-    nav { padding: 1.25rem 1.5rem; }
-    .nav-links { gap: 1.5rem; }
-    .hero { padding: 7rem 1.5rem 4rem; }
-    section { padding: 5rem 1.5rem; }
-    .what-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-line { display: none; }
-    .founding-inner { padding: 3rem 1.5rem; gap: 2.5rem; }
-    footer { padding: 2rem 1.5rem; }
-    .signup-section { padding: 5rem 1.5rem; }
-  }
+ /* responsive */
+ @media (max-width: 768px) {
+  nav { padding: 1.25rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .hero { padding: 7rem 1.5rem 4rem; }
+  section { padding: 5rem 1.5rem; }
+  .what-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-line { display: none; }
+  .founding-inner { padding: 3rem 1.5rem; gap: 2.5rem; }
+  footer { padding: 2rem 1.5rem; }
+  .signup-section { padding: 5rem 1.5rem; }
+ }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-logo"><span>Open</span>Alexandria</a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#domains">Domains</a>
-    <a href="#join">Join</a>
-  </div>
+ <a href="/" class="nav-logo"><span>Open</span>Alexandria</a>
+ <div class="nav-links">
+  <a href="#about">About</a>
+  <a href="#domains">Domains</a>
+  <a href="#join">Join</a>
+ </div>
 </nav>
 
 <div class="hero">
-  <p class="hero-eyebrow">openalexandria.io &mdash; Founded 2026</p>
-  <h1 class="hero-title">Open<em>Alexandria</em></h1>
-  <p class="hero-sub">An open platform for collecting and sharing field measurements from the physical world. Any domain. Any sensor. Any site. The data belongs to everyone.</p>
-  <div class="hero-actions">
-    <a href="#join" class="btn-primary">Join the founding community</a>
-    <a href="#about" class="btn-ghost">Learn more</a>
-  </div>
-  <div class="hero-line"></div>
-  <p class="scroll-hint">Scroll to explore</p>
+ <p class="hero-eyebrow">openalexandria.io &mdash; Founded 2026</p>
+ <h1 class="hero-title">Open<em>Alexandria</em></h1>
+ <p class="hero-sub">An open platform for collecting and sharing field measurements from the physical world. Any domain. Any sensor. Any site. The data belongs to everyone.</p>
+ <div class="hero-actions">
+  <a href="#join" class="btn-primary">Join the founding community</a>
+  <a href="#about" class="btn-ghost">Learn more</a>
+ </div>
+ <div class="hero-line"></div>
+ <p class="scroll-hint">Scroll to explore</p>
 </div>
 
 <hr>
 
 <section id="about">
-  <p class="section-label">What it is</p>
-  <div class="what-grid">
-    <div class="what-body">
-      <p>Right now, a researcher measuring acoustic response at an ancient stone site in California has no way to compare results with someone doing the same thing in Peru. A farmer monitoring soil properties has no shared database to contribute to. A citizen scientist observing bird behavior has no standardized format that makes their data comparable to anyone else's.</p>
-      <p>Every researcher is an island.</p>
-      <p>OpenAlexandria connects the islands. Not by forcing everyone into one methodology, but by providing a standard framework flexible enough to serve many domains while strict enough to make data comparable within each one.</p>
-      <p>Open source. Community owned. Free to query, free to contribute, free to build on top of.</p>
-    </div>
-    <div class="what-pull">
-      The original Library of Alexandria was destroyed, and humanity lost knowledge it has never recovered. This is the version that cannot be burned down.
-    </div>
+ <p class="section-label">What it is</p>
+ <div class="what-grid">
+  <div class="what-body">
+   <p>Right now, a researcher measuring acoustic response at an ancient stone site in California has no way to compare results with someone doing the same thing in Peru. A farmer monitoring soil properties has no shared database to contribute to. A citizen scientist observing bird behavior has no standardized format that makes their data comparable to anyone else's.</p>
+   <p>Every researcher is an island.</p>
+   <p>OpenAlexandria connects the islands. Not by forcing everyone into one methodology, but by providing a standard framework flexible enough to serve many domains while strict enough to make data comparable within each one.</p>
+   <p>Open source. Community owned. Free to query, free to contribute, free to build on top of.</p>
   </div>
+  <div class="what-pull">
+   The original Library of Alexandria was destroyed, and humanity lost knowledge it has never recovered. This is the version that cannot be burned down.
+  </div>
+ </div>
 </section>
 
 <hr>
 
 <section id="domains">
-  <p class="section-label">Domains</p>
-  <div class="domains-grid">
+ <p class="section-label">Domains</p>
+ <div class="domains-grid">
 
-    <div class="domain-card">
-      <p class="domain-tag">Archaeology</p>
-      <h3 class="domain-name">Stone &amp; Structure</h3>
-      <p class="domain-desc">Acoustic, magnetic, and electromagnetic measurements at ancient and megalithic sites. The founding domain. Standardized field sessions using compatible instruments, all results comparable across sites globally.</p>
-      <span class="domain-founding">Founding domain</span>
-    </div>
-
-    <div class="domain-card">
-      <p class="domain-tag">Agriculture</p>
-      <h3 class="domain-name">Soil &amp; Land</h3>
-      <p class="domain-desc">Soil composition, electromagnetic properties, moisture mapping, yield correlation. Field data that belongs to farmers and researchers, not corporations.</p>
-    </div>
-
-    <div class="domain-card">
-      <p class="domain-tag">Botany</p>
-      <h3 class="domain-name">Plant &amp; Growth</h3>
-      <p class="domain-desc">Plant response to EM fields, soil interaction, growth pattern documentation. Open data for a field that has barely been studied.</p>
-    </div>
-
-    <div class="domain-card">
-      <p class="domain-tag">Ornithology</p>
-      <h3 class="domain-name">Bird &amp; Behavior</h3>
-      <p class="domain-desc">Behavioral observation logging, vocalization recording, longitudinal population data. Standardized enough for citizen scientists to contribute data that actually matters.</p>
-    </div>
-
-    <div class="domain-card">
-      <p class="domain-tag">Geology</p>
-      <h3 class="domain-name">Ground &amp; Substrate</h3>
-      <p class="domain-desc">Substrate resonance, micro-seismic activity, ground conductivity mapping. The physical world measured and shared.</p>
-    </div>
-
-    <div class="domain-card">
-      <p class="domain-tag">And more</p>
-      <h3 class="domain-name">Your Domain</h3>
-      <p class="domain-desc">The section structure is extensible. If you have field data and a methodology, there is a place for it here. New domains grow as communities form around them.</p>
-    </div>
-
+  <div class="domain-card">
+   <p class="domain-tag">Archaeology</p>
+   <h3 class="domain-name">Stone &amp; Structure</h3>
+   <p class="domain-desc">Acoustic, magnetic, and electromagnetic measurements at ancient and megalithic sites. The founding domain. Standardized field sessions using compatible instruments, all results comparable across sites globally.</p>
+   <span class="domain-founding">Founding domain</span>
   </div>
+
+  <div class="domain-card">
+   <p class="domain-tag">Agriculture</p>
+   <h3 class="domain-name">Soil &amp; Land</h3>
+   <p class="domain-desc">Soil composition, electromagnetic properties, moisture mapping, yield correlation. Field data that belongs to farmers and researchers, not corporations.</p>
+  </div>
+
+  <div class="domain-card">
+   <p class="domain-tag">Botany</p>
+   <h3 class="domain-name">Plant &amp; Growth</h3>
+   <p class="domain-desc">Plant response to EM fields, soil interaction, growth pattern documentation. Open data for a field that has barely been studied.</p>
+  </div>
+
+  <div class="domain-card">
+   <p class="domain-tag">Ornithology</p>
+   <h3 class="domain-name">Bird &amp; Behavior</h3>
+   <p class="domain-desc">Behavioral observation logging, vocalization recording, longitudinal population data. Standardized enough for citizen scientists to contribute data that actually matters.</p>
+  </div>
+
+  <div class="domain-card">
+   <p class="domain-tag">Geology</p>
+   <h3 class="domain-name">Ground &amp; Substrate</h3>
+   <p class="domain-desc">Substrate resonance, micro-seismic activity, ground conductivity mapping. The physical world measured and shared.</p>
+  </div>
+
+  <div class="domain-card">
+   <p class="domain-tag">And more</p>
+   <h3 class="domain-name">Your Domain</h3>
+   <p class="domain-desc">The section structure is extensible. If you have field data and a methodology, there is a place for it here. New domains grow as communities form around them.</p>
+  </div>
+
+ </div>
 </section>
 
 <div class="founding-bar">
-  <div class="founding-inner">
-    <div class="founding-stat">
-      <p class="founding-num">2026</p>
-      <p class="founding-label">Founded</p>
-    </div>
-    <div class="founding-divider"></div>
-    <div class="founding-stat">
-      <p class="founding-num">Open</p>
-      <p class="founding-label">License</p>
-    </div>
-    <div class="founding-divider"></div>
-    <div class="founding-stat">
-      <p class="founding-num">&infin;</p>
-      <p class="founding-label">Domains</p>
-    </div>
-    <div class="founding-divider"></div>
-    <p class="founding-text">"The data belongs to everyone. The tools belong to everyone. The knowledge that emerges from it belongs to everyone."</p>
+ <div class="founding-inner">
+  <div class="founding-stat">
+   <p class="founding-num">2026</p>
+   <p class="founding-label">Founded</p>
   </div>
+  <div class="founding-divider"></div>
+  <div class="founding-stat">
+   <p class="founding-num">Open</p>
+   <p class="founding-label">License</p>
+  </div>
+  <div class="founding-divider"></div>
+  <div class="founding-stat">
+   <p class="founding-num">&infin;</p>
+   <p class="founding-label">Domains</p>
+  </div>
+  <div class="founding-divider"></div>
+  <p class="founding-text">"The data belongs to everyone. The tools belong to everyone. The knowledge that emerges from it belongs to everyone."</p>
+ </div>
 </div>
 
 <section>
-  <p class="section-label">The mission</p>
-  <div class="mission-block">
-    <h2>Science moves faster when researchers can find each other.</h2>
-    <p>OpenAlexandria is not a hardware company. It is not a research institution. It is infrastructure — the standard, the database, the community layer that makes distributed field science possible.</p>
-    <p>Compatible instruments connect to OpenAlexandria and upload standardized session data. Any researcher can query the full database. Any developer can build tools on top of it. Any domain can plug in.</p>
-    <p>The long term vision: AI capability built directly into field instruments. Devices that not only collect data but interpret it in real time, cross-reference against the full OpenAlexandria database, and flag anomalies as they occur. A researcher points a device at a site and asks what it finds.</p>
-    <p>We are building toward that. Morning by morning.</p>
-  </div>
+ <p class="section-label">The mission</p>
+ <div class="mission-block">
+  <h2>Science moves faster when researchers can find each other.</h2>
+  <p>OpenAlexandria is not a hardware company. It is not a research institution. It is infrastructure — the standard, the database, the community layer that makes distributed field science possible.</p>
+  <p>Compatible instruments connect to OpenAlexandria and upload standardized session data. Any researcher can query the full database. Any developer can build tools on top of it. Any domain can plug in.</p>
+  <p>The long term vision: AI capability built directly into field instruments. Devices that not only collect data but interpret it in real time, cross-reference against the full OpenAlexandria database, and flag anomalies as they occur. A researcher points a device at a site and asks what it finds.</p>
+  <p>We are building toward that. Morning by morning.</p>
+ </div>
 </section>
 
 <hr>
 
 <section id="join" class="signup-section">
-  <h2>Be part of the founding.</h2>
-  <p>OpenAlexandria is in active development. Leave your email and we will reach out when the platform is ready for contributors.</p>
-  <div class="signup-form">
-    <input type="email" placeholder="your@email.com">
-    <a href="#" class="btn-primary">Join the list</a>
-  </div>
+ <h2>Be part of the founding.</h2>
+ <p>OpenAlexandria is in active development. Leave your email and we will reach out when the platform is ready for contributors.</p>
+ <form class="signup-form" action="https://formspree.io/f/xaqaoqaq" method="POST">
+  <input type="email" name="email" placeholder="your@email.com" required>
+  <button type="submit" class="btn-primary">Join the list</button>
+ </form>
 </section>
 
 <hr>
 
 <footer>
-  <p class="footer-logo"><span>Open</span>Alexandria</p>
-  <p class="footer-meta">openalexandria.io &mdash; Founded April 16, 2026 &mdash; Open Source &mdash; Community Owned</p>
+ <p class="footer-logo"><span>Open</span>Alexandria</p>
+ <p class="footer-meta">openalexandria.io &mdash; Founded April 16, 2026 &mdash; Open Source &mdash; Community Owned</p>
 </footer>
 
 </body>
