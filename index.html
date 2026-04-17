@@ -32,7 +32,6 @@
   overflow-x: hidden;
  }
 
- /* grain overlay */
  body::before {
   content: '';
   position: fixed;
@@ -43,7 +42,6 @@
   opacity: 0.6;
  }
 
- /* nav */
  nav {
   position: fixed;
   top: 0;
@@ -67,9 +65,7 @@
   text-transform: uppercase;
  }
 
- .nav-logo span {
-  color: var(--gold);
- }
+ .nav-logo span { color: var(--gold); }
 
  nav a {
   font-family: 'DM Mono', monospace;
@@ -83,10 +79,8 @@
  }
 
  nav a:hover { color: var(--ink); }
-
  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
 
- /* hero */
  .hero {
   min-height: 100vh;
   display: flex;
@@ -120,10 +114,7 @@
   animation: fadeUp 0.8s ease forwards 0.4s;
  }
 
- .hero-title em {
-  font-style: italic;
-  color: var(--gold);
- }
+ .hero-title em { font-style: italic; color: var(--gold); }
 
  .hero-sub {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -178,7 +169,6 @@
 
  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
 
- /* decorative line */
  .hero-line {
   position: absolute;
   right: 3rem;
@@ -191,7 +181,6 @@
   animation: fadeIn 1.2s ease forwards 1s;
  }
 
- /* scroll indicator */
  .scroll-hint {
   position: absolute;
   bottom: 3rem;
@@ -216,7 +205,6 @@
   background: var(--stone);
  }
 
- /* section */
  section {
   max-width: 1200px;
   margin: 0 auto;
@@ -244,7 +232,6 @@
   max-width: 80px;
  }
 
- /* what it is */
  .what-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -271,7 +258,6 @@
   padding-left: 2rem;
  }
 
- /* domains */
  .domains-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -325,10 +311,7 @@
   padding: 0.3rem 0.75rem;
  }
 
- /* the mission */
- .mission-block {
-  max-width: 760px;
- }
+ .mission-block { max-width: 760px; }
 
  .mission-block h2 {
   font-size: clamp(2rem, 4vw, 3.5rem);
@@ -345,7 +328,6 @@
   margin-bottom: 1.5rem;
  }
 
- /* founding */
  .founding-bar {
   background: var(--sand);
   border-top: 0.5px solid var(--sand-dark);
@@ -362,9 +344,7 @@
   flex-wrap: wrap;
  }
 
- .founding-stat {
-  text-align: center;
- }
+ .founding-stat { text-align: center; }
 
  .founding-num {
   font-size: 3rem;
@@ -398,7 +378,6 @@
   font-style: italic;
  }
 
- /* signup */
  .signup-section {
   text-align: center;
   padding: 8rem 3rem;
@@ -423,11 +402,10 @@
 
  .signup-form {
   display: flex;
-  gap: 0;
+  gap: 1rem;
   max-width: 480px;
   margin: 0 auto;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
  }
 
@@ -449,7 +427,6 @@
  .signup-form input:focus { border-color: var(--ink); }
  .signup-form input::placeholder { color: var(--stone); }
 
- /* footer */
  footer {
   border-top: 0.5px solid var(--sand-dark);
   padding: 2.5rem 3rem;
@@ -480,14 +457,8 @@
   text-transform: uppercase;
  }
 
- /* divider */
- hr {
-  border: none;
-  border-top: 0.5px solid var(--sand-dark);
-  margin: 0;
- }
+ hr { border: none; border-top: 0.5px solid var(--sand-dark); margin: 0; }
 
- /* animations */
  @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
@@ -498,7 +469,6 @@
   to { opacity: 1; }
  }
 
- /* responsive */
  @media (max-width: 768px) {
   nav { padding: 1.25rem 1.5rem; }
   .nav-links { gap: 1.5rem; }
@@ -557,44 +527,37 @@
 <section id="domains">
  <p class="section-label">Domains</p>
  <div class="domains-grid">
-
   <div class="domain-card">
    <p class="domain-tag">Archaeology</p>
    <h3 class="domain-name">Stone &amp; Structure</h3>
    <p class="domain-desc">Acoustic, magnetic, and electromagnetic measurements at ancient and megalithic sites. The founding domain. Standardized field sessions using compatible instruments, all results comparable across sites globally.</p>
    <span class="domain-founding">Founding domain</span>
   </div>
-
   <div class="domain-card">
    <p class="domain-tag">Agriculture</p>
    <h3 class="domain-name">Soil &amp; Land</h3>
    <p class="domain-desc">Soil composition, electromagnetic properties, moisture mapping, yield correlation. Field data that belongs to farmers and researchers, not corporations.</p>
   </div>
-
   <div class="domain-card">
    <p class="domain-tag">Botany</p>
    <h3 class="domain-name">Plant &amp; Growth</h3>
    <p class="domain-desc">Plant response to EM fields, soil interaction, growth pattern documentation. Open data for a field that has barely been studied.</p>
   </div>
-
   <div class="domain-card">
    <p class="domain-tag">Ornithology</p>
    <h3 class="domain-name">Bird &amp; Behavior</h3>
    <p class="domain-desc">Behavioral observation logging, vocalization recording, longitudinal population data. Standardized enough for citizen scientists to contribute data that actually matters.</p>
   </div>
-
   <div class="domain-card">
    <p class="domain-tag">Geology</p>
    <h3 class="domain-name">Ground &amp; Substrate</h3>
    <p class="domain-desc">Substrate resonance, micro-seismic activity, ground conductivity mapping. The physical world measured and shared.</p>
   </div>
-
   <div class="domain-card">
    <p class="domain-tag">And more</p>
    <h3 class="domain-name">Your Domain</h3>
    <p class="domain-desc">The section structure is extensible. If you have field data and a methodology, there is a place for it here. New domains grow as communities form around them.</p>
   </div>
-
  </div>
 </section>
 
